@@ -25,7 +25,7 @@ public class Quiz5_if_srpGame2 {
 			String msg = (computer == 0) ? "컴이 가위" : (computer == 1) ? "컴이 바위" : "컴이 보자기";
 			System.out.println(msg);
 			// 경우의 수가 3가지 : 졌다, 이겼다, 비겼다
-			if( (you+2)%3 == computer) {
+			if( (you+1)%3 == computer) {
 				System.out.println("당신이 졌어요 ");
 			}else if(you == computer ) {
 				System.out.println("비겼다");
