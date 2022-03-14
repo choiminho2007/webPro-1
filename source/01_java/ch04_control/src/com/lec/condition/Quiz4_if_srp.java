@@ -1,6 +1,6 @@
 package com.lec.condition;
 import java.util.Scanner;
-public class Quiz04_if_srp {
+public class Quiz4_if_srp {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("가위(0),바위(1),보(2) 중 하나를 선택하세요 : ");
