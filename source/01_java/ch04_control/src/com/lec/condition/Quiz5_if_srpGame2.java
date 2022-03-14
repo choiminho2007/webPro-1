@@ -5,7 +5,7 @@ import java.util.Scanner;
 // 0 <= Math.random() <1
 // 0 <= Math.random()*3 < 3
 // (int)(Math.random()*3) : 0,1,2 중의 하나
-public class Quiz5_if_srpGame {
+public class Quiz5_if_srpGame2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int you, computer = (int) (Math.random() * 3); // 0,1,2
@@ -24,31 +24,24 @@ public class Quiz5_if_srpGame {
 		if (you != 3) { // 컴퓨터가 낸 것과 승패 출력
 			String msg = (computer == 0) ? "컴이 가위" : (computer == 1) ? "컴이 바위" : "컴이 보자기";
 			System.out.println(msg);
-			if (you == 0) {
-				if (computer == 0) {
-					System.out.println("비겼다");
-				} else if (computer == 1) {
-					System.out.println("컴퓨터가 이겼다");
-				} else {
-					System.out.println("당신이 이겼다");
-				} // if
-			} else if (you == 1) {
-				if (computer == 0) {
-					System.out.println("당신이 이겼다");
-				} else if (computer == 1) {
-					System.out.println("비겼다");
-				} else {
-					System.out.println("컴퓨터가 이겼다");
-				} // if
-			} else if (you == 2) {
-				if (computer == 0) {
-					System.out.println("컴퓨터가 이겼다");
-				} else if (computer == 1) {
-					System.out.println("당신이 이겼다");
-				} else {
-					System.out.println("비겼다");
-				} // if
-			} // if - 승패 출력
+			// 경우의 수가 3가지 : 졌다, 이겼다, 비겼다
+			if( (you+2)%3 == computer) {
+				System.out.println("당신이 졌어요 ");
+			}else if(you == computer ) {
+				System.out.println("비겼다");
+			}else {
+				System.out.println("당신이 이겼어요 ");
+			}// if - 승패 출력
 		} // if
 	}// main
 }// class
+
+
+
+
+
+
+
+
+
+
