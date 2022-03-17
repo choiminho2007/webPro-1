@@ -10,13 +10,13 @@ public class Account {
 	public Account(String accountNo, String ownerName) { // 생성자 역할 : 데이터 초기화
 		this.accountNo = accountNo;
 		this.ownerName = ownerName;
-		System.out.printf("%s(%s)님 계좌 개설 감사합니다. 돈은 왜 안 갖고 오셨어요", ownerName, accountNo);
+		System.out.printf("%s(%s)님 계좌 개설 감사합니다. 돈은 왜 안 갖고 오셨어요\n", ownerName, accountNo);
 	}
 	public Account(String accountNo, String ownerName, long balance) {
 		this.accountNo = accountNo;
 		this.ownerName = ownerName;
 		this.balance   = balance;
-		System.out.printf("%s(%s)님 %d원 입금 계좌 개설 감사", ownerName, accountNo, balance);
+		System.out.printf("%s(%s)님 %d원 입금 계좌 개설 감사\n", ownerName, accountNo, balance);
 	}
 	// 메소드 예금하다(void deposit(int)), 인출하다(int withdraw(int)), 잔액조회(String infoPrint()) 
 	public void deposit(int money) { // 예금은 양수 money가 들어오면 예금처리
@@ -30,11 +30,11 @@ public class Account {
 		if(money<=balance) {
 			balance -= money; // balance = balance-money;
 		}else {
-			System.out.println("잔액이 부족하여 인출이 불가합니다");
+			System.out.println(ownerName+"잔액이 부족하여 인출이 불가합니다");
 		}
 	}
 	public String infoPrint() { // 홍길동(100-1)님 잔액 : 1000원
-		return String.format("%s(%s)님 잔액 : %d원", ownerName, accountNo, balance);
+		return String.format("%s(%s)님 잔액 : %d원\n", ownerName, accountNo, balance);
 		//return ownerName + "(" + accountNo + ")" + "님 잔액 : " + balance + "원";
 	}
 	// setter & getter
