@@ -16,13 +16,15 @@ public class Student {
 		tot = kor + eng + mat;
 		avg = tot / 3.0;
 	}
-	// s.print() -> 沥快己 90 90 90 270 90.0 免仿
+	// s.print() -> 沥快己 90 90 90 270 90.0 sysout
 	public void print() {
-		System.out.printf("\t %s \t %d \t %d \t %d \t %d \t %.1f\n", name, kor, eng, mat, tot, avg);
+		System.out.printf("\t %s \t %d \t %d \t %d \t %d \t %.1f\n", 
+				name, kor, eng, mat, tot, avg);
 	}
 	// System.out.println(s.infoString());
 	public String infoString() {
-		return String.format("\t %s \t %d \t %d \t %d \t %d \t %.1f\n", name, kor, eng, mat, tot, avg);
+		return String.format("\t %s \t %d \t %d \t %d \t %d \t %.1f\n", 
+				name, kor, eng, mat, tot, avg);
 	}
 	public String getName() {return name;}
 	public int getKor() {return kor;}
