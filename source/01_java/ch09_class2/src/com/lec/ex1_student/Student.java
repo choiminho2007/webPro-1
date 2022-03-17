@@ -33,3 +33,8 @@ public class Student {
 	public int getTot() {return tot;}
 	public double getAvg() {return avg;}
 }
+
+
+
+
+
