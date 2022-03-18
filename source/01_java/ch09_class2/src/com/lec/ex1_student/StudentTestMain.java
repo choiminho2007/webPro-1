@@ -9,6 +9,8 @@ public class StudentTestMain {
 		Student s5 = new Student("유아인", 70, 90, 90);
 		Student[] student = {s1, s2, s3, s4, s5};
 		String[] title = {"이름","국어","영어","수학","총점","평균"};
+		int[] tot = new int[5]; // tot[0] 국어누적, tot[1] 영어누적 ... tot[4]평균누적 
+		double[] avg = new double[5]; // avg[0] 국어평균, avg[1]영어평균 ... avg[4]평균의평균 
 		printLine();
 		System.out.println("\t\t\t성적표");
 		printLine('-',50);
@@ -18,7 +20,7 @@ public class StudentTestMain {
 		System.out.println();
 		printLine('-',50);
 		for(Student s : student) {
-			s.print();
+			s.print(); // 출력후 누적
 		}
 		printLine();
 	}
