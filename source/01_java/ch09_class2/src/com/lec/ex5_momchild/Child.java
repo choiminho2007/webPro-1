@@ -3,7 +3,7 @@ package com.lec.ex5_momchild;
 // first.takeMoney(1000); 엄마 천원만
 public class Child {
 	private String name;
-	MomPouch momPouch;
+	static MomPouch momPouch;
 	public Child() {}
 	public Child(String name) {
 		this.name = name;
