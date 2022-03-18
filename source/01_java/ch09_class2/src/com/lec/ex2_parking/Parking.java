@@ -1,4 +1,7 @@
 package com.lec.ex2_parking;
+
+import java.util.Scanner;
+
 public class Parking {
 	private String no;
 	private int inTime;
@@ -24,6 +27,13 @@ public class Parking {
 		System.out.println("출차시간 : "+ outTime +"시");
 		System.out.println("주차요금 : "+fee+"원");
 		System.out.println("***********************");
+	}
+	public void out() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print(inTime+"시에 들어오셨는데 몇시에 출차하시나요? ");
+		outTime = scanner.nextInt();
+		out(outTime);
+		scanner.close();
 	}
 }
 
