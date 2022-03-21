@@ -1,4 +1,4 @@
-package com.lec.ex08_super;
+package com.lec.ex08_superdot;
 //super.  : 내 부모단의
 //super() : 내 부모단의 생성자 함수	
 public class ChildClass extends ParentClass{ // ParentClass - i, method()
