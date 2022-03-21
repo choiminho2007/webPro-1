@@ -13,8 +13,26 @@ public class TestMain {
 			System.out.println(personArr[i].infoString());
 		}
 		System.out.println("확장 for문");
+		// 배열 0~끝방까지 infoString()
 		for(Person p : personArr) {
 			System.out.println(p.infoString());
 		}
-	}
-}
+		// 배열 0~끝방까지 buy(1000)
+		for(Person p : personArr) {
+			if(p instanceof Customer) { // p변수가 Customer형 객체(instance)인가?
+				((Customer)p).buy(1000);
+			}else {
+				System.out.println("buy는 Customer만 가능합니다");
+			} // if
+		}// for
+	}// main
+} // class
+
+
+
+
+
+
+
+
+
