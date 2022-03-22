@@ -1,7 +1,7 @@
 package com.lec.ex1_store;
 public class TestMain {
 	public static void main(String[] args) {
-		HeadQuarterStore[] store  = {new HeadQuarterStore("= = = 본사 = = ="), 
+		HeadQuarterStore[] store = { /* new HeadQuarterStore("= = = 본사 = = ="), */
 									new Store1("= = = 1호점 = = ="),
 									new Store2("= = = 2호점 = = ="),
 									new Store3("= = = 3호점 = = =")};
