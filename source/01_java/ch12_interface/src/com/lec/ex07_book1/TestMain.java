@@ -26,7 +26,7 @@ public class TestMain {
 				break;
 			}
 		}while(fn!=0);
-		
+		System.out.println("BYE");
 //		while(true) {
 //			System.out.print("1:대출 | 2:반납 | 3:책list | 0:종료");
 //			fn = scanner.nextInt();
