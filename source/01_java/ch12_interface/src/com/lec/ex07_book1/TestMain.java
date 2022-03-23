@@ -22,7 +22,10 @@ public class TestMain {
 				System.out.println("반납 진행하는 로직 들어갈 예정");
 				break;
 			case 3:
-				System.out.println("책 list 출력 로직 들어갈 예정");
+				System.out.println("책 리스트는 다음과 같습니다");
+				for(Book book : books) {
+					book.printState();
+				}
 				break;
 			}
 		}while(fn!=0);
