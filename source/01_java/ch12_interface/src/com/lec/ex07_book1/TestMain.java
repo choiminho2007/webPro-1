@@ -16,7 +16,31 @@ public class TestMain {
 			fn = scanner.nextInt();
 			switch (fn) {
 			case 1:
-				System.out.println("대출 진행하는 로직 들어갈 예정");
+				//대출 : 1.책이름입력  2.책조회 3.책상태확인  4.대출인입력 5.대출일입력 6.대출메소드 호출
+				// 1.책이름입력
+				System.out.print("대출하고자 하는 책이름은 ?");
+				bTitle = scanner.next(); // white-space 앞까지의 스트링만 받음
+				// 2.책조회
+				for(idx=0 ; idx<books.length ; idx++) {
+					if( bTitle.equals(books[idx].getBookTitle()) ){
+						break;
+					}
+				}// 책 조회 for
+				if (idx==books.length) {
+					System.out.println("현재 보유하지 않은 도서입니다.");
+				}else { // books[idx] 도서를 대출 처리
+					// 3.책상태확인
+					if(books[idx].getState() == Book.STATE_BORROWED) { // 대출불가 상태
+						System.out.println("현재 대출중인 도서입니다");
+					}else { // 대출가능상태
+						//4.대출인입력 5.대출일입력 6.대출메소드 호출
+						System.out.print("대출자는 ?");
+						borrower = scanner.next();
+						System.out.print("대출일은 ?");
+						checkOutDate = scanner.next();
+						books[idx].checkOut(borrower, checkOutDate);
+					}
+				}
 				break;
 			case 2:
 				System.out.println("반납 진행하는 로직 들어갈 예정");

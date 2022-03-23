@@ -56,6 +56,24 @@ public class Book implements ILendable {
 //		msg = msg + ( (state==STATE_NORMAL)? "대출가능" : (state==STATE_BORROWED)? "대출중":"이상해" );
 //		System.out.println(msg);
 	}
+	public String getBookNo() {
+		return bookNo;
+	}
+	public String getBookTitle() {
+		return bookTitle;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public String getBorrower() {
+		return borrower;
+	}
+	public String getCheckOutDate() {
+		return checkOutDate;
+	}
+	public byte getState() {
+		return state;
+	}
 }
 
 
