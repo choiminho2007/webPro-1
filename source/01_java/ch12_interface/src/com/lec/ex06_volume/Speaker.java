@@ -44,7 +44,7 @@ public class Speaker implements IVolume{
 			volumeLevel -= level; //volumeLevel = volumeLevel - level;
 			System.out.println("스피커 볼륨을 "+level+"내려 현재 "+volumeLevel);
 		}else { // level만큼 못 내릴 경우 ex. 현재 볼륨 5 level 10 => 몇만큼 내릴지 계산(5),  볼륨은 0으로
-			int tempLevel = volumeLevel; 
+			int tempLevel = volumeLevel - SPEAKER_MIN_VOLUME; 
 			volumeLevel = SPEAKER_MIN_VOLUME;
 			System.out.println("스피커 볼륨을 "+level+"만큼 못 내리고 "+tempLevel+"만큼 내려 최소치 "+SPEAKER_MIN_VOLUME);
 		}// if
