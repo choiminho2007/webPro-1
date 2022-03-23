@@ -42,11 +42,32 @@ public class Book implements ILendable {
 		state = STATE_NORMAL;
 		System.out.println(bookTitle +" 도서가 반납 완료되었습니다");
 	}
-
+	// b.printState() => 890ㅁ-101-1ㄱ java(홍길동 지음) 대출중
 	@Override
 	public void printState() {
-		// TODO Auto-generated method stub
-
+		if(state==STATE_NORMAL) {
+			System.out.println(bookNo + "\t" + bookTitle + "(" + writer + "지음) 대출가능");
+		}else if(state==STATE_BORROWED) {
+			System.out.println(bookNo + "\t" + bookTitle + "(" + writer + "지음) 대출중");
+		}else {
+			System.out.println(bookNo + "\t" + bookTitle + "(" + writer + "지음) 이상해");
+		}
+//		String msg = bookNo + "\t" + bookTitle + "(" + writer + "지음)";
+//		msg = msg + ( (state==STATE_NORMAL)? "대출가능" : (state==STATE_BORROWED)? "대출중":"이상해" );
+//		System.out.println(msg);
 	}
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
