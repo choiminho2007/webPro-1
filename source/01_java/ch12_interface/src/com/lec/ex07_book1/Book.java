@@ -15,7 +15,7 @@ public class Book implements ILendable {
 //		checkOutDate = null;
 //		state = STATE_NORMAL;
 	} 
-	// b.checkOut("신길동","03-23"); 대출 : 상태를 확인해서 대출중이면 중단, 대출가능이면 대출처리
+	// b.checkOut("신길동","03-23"); 대출 : state를 확인해서 대출중(1)이면 중단, 대출가능(0)이면 대출처리
 	@Override
 	public void checkOut(String borrower, String checkoutDate) {
 		if(state == STATE_BORROWED) { // 대출중이면 메세지 뿌리고 끝
@@ -29,11 +29,18 @@ public class Book implements ILendable {
 		System.out.println(bookTitle + " 도서가 대출 처리되었습니다");
 		System.out.println("대출인 : "+borrower +"\t대출일 : "+checkoutDate);
 	}
-
+	// b.checkIn() 반납 : state 확인해서 대출가능(0)이면 메세지 뿌리고 중단, 대출중(1)이면 반납진행
 	@Override
 	public void checkIn() {
-		// TODO Auto-generated method stub
-
+		if(state == STATE_NORMAL) {
+			System.out.println(bookTitle + "도서는 반납완료된 책인데 이상합니다. 예외다");
+			return;
+		}
+		// state가 대출중(1)이라 반납 진행
+		borrower = null;
+		checkOutDate = null;
+		state = STATE_NORMAL;
+		System.out.println(bookTitle +" 도서가 반납 완료되었습니다");
 	}
 
 	@Override
