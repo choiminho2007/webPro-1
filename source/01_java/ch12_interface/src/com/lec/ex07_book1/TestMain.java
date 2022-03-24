@@ -42,8 +42,22 @@ public class TestMain {
 					}
 				}
 				break;
-			case 2:
-				System.out.println("반납 진행하는 로직 들어갈 예정");
+			case 2: // 반납 : 1.책이름  2.책조회  3.반납 
+				// 1.책이름
+				System.out.print("반납할 책이름은 ?");
+				bTitle = scanner.next();
+				// 2.책조회
+				for(idx=0 ; idx<books.length ; idx++) {
+					if(bTitle.equals(books[idx].getBookTitle())) {
+						break;
+					}
+				}
+				if(idx == books.length) {
+					System.out.println("해당 도서는 본 도서관의 책이 아닙니다");
+				}else {// idx가 찾은 그 위치
+					// 3.반납 
+					books[idx].checkIn();
+				}
 				break;
 			case 3:
 				System.out.println("책 리스트는 다음과 같습니다");
