@@ -1,12 +1,12 @@
-package com.lec.ex07_book1;
+package com.lec.ex08_book2;
 import java.util.Scanner;
-public class TestMain {
+public class LibMain {
 	public static void main(String[] args) {
-		Book[] books = {new Book("890ㅁ-101-1ㄱ","java","홍길동"), 
-						new Book("110ㄱ-111-1ㄱ","dbms","신길동"),
-						new Book("110ㅁ-123-2ㅌ","web", "유길동"),
-						new Book("770ㅁ-123-2ㅌ","jsp", "고길동"),
-						new Book("110ㅁ-123-2ㅌ","spring", "김길동")};
+		BookLib[] books = {new BookLib("890ㅁ-101-1ㄱ","java","홍길동"), 
+						new BookLib("110ㄱ-111-1ㄱ","dbms","신길동"),
+						new BookLib("110ㅁ-123-2ㅌ","web", "유길동"),
+						new BookLib("770ㅁ-123-2ㅌ","jsp", "고길동"),
+						new BookLib("110ㅁ-123-2ㅌ","spring", "김길동")};
 		Scanner scanner = new Scanner(System.in);
 		int fn; // 기능번호 (1:대출 | 2:반납 | 3:책list | 0:종료)
 		int idx; // 대출하거나 반납하려고 할 때 조회된 책의 index
@@ -30,7 +30,7 @@ public class TestMain {
 					System.out.println("현재 보유하지 않은 도서입니다.");
 				}else { // books[idx] 도서를 대출 처리
 					// 3.책상태확인
-					if(books[idx].getState() == Book.STATE_BORROWED) { // 대출불가 상태
+					if(books[idx].getState() == BookLib.STATE_BORROWED) { // 대출불가 상태
 						System.out.println("현재 대출중인 도서입니다");
 					}else { // 대출가능상태
 						//4.대출인입력 5.대출일입력 6.대출메소드 호출
@@ -39,6 +39,7 @@ public class TestMain {
 						System.out.print("대출일은 ?");
 						checkOutDate = scanner.next();
 						books[idx].checkOut(borrower, checkOutDate);
+						
 					}
 				}
 				break;
@@ -61,24 +62,13 @@ public class TestMain {
 				break;
 			case 3:
 				System.out.println("책 리스트는 다음과 같습니다");
-				for(Book book : books) {
+				for(BookLib book : books) {
 					book.printState();
 				}
 				break;
 			}
 		}while(fn!=0);
-		scanner.close();
 		System.out.println("BYE");
-//		while(true) {
-//			System.out.print("1:대출 | 2:반납 | 3:책list | 0:종료");
-//			fn = scanner.nextInt();
-//			if(fn==0) {
-//				break;
-//			}
-		
-//		}
-		
-		
 	}// main
 }// class
 
