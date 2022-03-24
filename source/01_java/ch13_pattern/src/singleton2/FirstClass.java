@@ -1,5 +1,4 @@
 package singleton2;
-
 public class FirstClass {
 	public FirstClass() {
 		SingletonClass singletonObject = SingletonClass.getInstance();
